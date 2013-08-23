@@ -42,6 +42,8 @@
                             array('label'=>'Home', 'url'=>array('/site/index'), 'icon'=>'home'),
                             array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
                             array('label'=>'Contact', 'url'=>array('/site/contact')),
+                            array('label'=>'User', 'url'=>array('/user')),
+                            array('label'=>'Rights', 'url'=>array('/rights')),
                             array('label'=>'Gii', 'url'=>'index.php?r=gii'),
                             array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
                             array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),

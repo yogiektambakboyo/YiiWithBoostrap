@@ -16,6 +16,10 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
+        'application.modules.user.models.*',
+        'application.modules.user.components.*',
+        'application.modules.rights.*',
+        'application.modules.rights.components.*',
 	),
 
     //'theme'=>'bootstrap',
@@ -32,6 +36,62 @@ return array(
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1'),
 		),
+
+        'user'=>array(
+            'tableUsers' => 'users',
+            'tableProfiles' => 'profiles',
+            'tableProfileFields' => 'profiles_fields',
+            # encrypting method (php hash function)
+            'hash' => 'md5',
+
+            # send activation email
+            'sendActivationMail' => true,
+
+            # allow access for non-activated users
+            'loginNotActiv' => false,
+
+            # activate user on registration (only sendActivationMail = false)
+            'activeAfterRegister' => false,
+
+            # automatically login from registration
+            'autoLogin' => true,
+
+            # registration path
+            'registrationUrl' => array('/user/registration'),
+
+            # recovery password path
+            'recoveryUrl' => array('/user/recovery'),
+
+            # login form path
+            'loginUrl' => array('/user/login'),
+
+            # page after login
+            'returnUrl' => array('/user/profile'),
+
+            # page after logout
+            'returnLogoutUrl' => array('/user/login'),
+        ),
+
+        //Modules Rights
+        'rights'=>array(
+
+            'superuserName'=>'Admin', // Name of the role with super user privileges.
+            'authenticatedName'=>'Authenticated',  // Name of the authenticated user role.
+            'userIdColumn'=>'id', // Name of the user id column in the database.
+            'userNameColumn'=>'username',  // Name of the user name column in the database.
+            'enableBizRule'=>true,  // Whether to enable authorization item business rules.
+            'enableBizRuleData'=>true,   // Whether to enable data for business rules.
+            'displayDescription'=>true,  // Whether to use item description instead of name.
+            'flashSuccessKey'=>'RightsSuccess', // Key to use for setting success flash messages.
+            'flashErrorKey'=>'RightsError', // Key to use for setting error flash messages.
+
+            'baseUrl'=>'/rights', // Base URL for Rights. Change if module is nested.
+            'layout'=>'rights.views.layouts.main',  // Layout to use for displaying Rights.
+            'appLayout'=>'application.views.layouts.main', // Application layout.
+            'cssFile'=>'rights.css', // Style sheet file to use for Rights.
+            'install'=>false,  // Whether to enable installer.
+            'debug'=>false,
+        ),
 	),
 
 	// application components
@@ -45,6 +105,17 @@ return array(
 			'allowAutoLogin'=>true,
 		),
 
+        'user'=>array(
+            'class'=>'RWebUser',
+            // enable cookie-based authentication
+            'allowAutoLogin'=>true,
+            'loginUrl'=>array('/user/login'),
+        ),
+        'authManager'=>array(
+            'class'=>'RDbAuthManager',
+            'connectionID'=>'db',
+            'defaultRoles'=>array('Authenticated', 'Guest'),
+        ),
 		// uncomment the following to enable URLs in path-format
 		/*
 		'urlManager'=>array(
@@ -62,7 +133,7 @@ return array(
 		// uncomment the following to use a MySQL database
 
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=kic_pm',
+			'connectionString' => 'mysql:host=localhost;dbname=playsms',
 			'emulatePrepare' => true,
 			'username' => 'root',
 			'password' => 'purnomo',

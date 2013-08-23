@@ -1,6 +1,7 @@
 <?php
 
-class SiteController extends Controller
+//class SiteController extends Controller
+class SiteController extends RController
 {
 	/**
 	 * Declares class-based actions.
@@ -20,6 +21,14 @@ class SiteController extends Controller
 			),
 		);
 	}
+
+    public function filters()
+    {
+        return array(
+            'rights', // perform access control for CRUD operations
+
+        );
+    }
 
 	/**
 	 * This is the default 'index' action that is invoked
