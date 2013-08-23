@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 23, 2013 at 10:58 AM
+-- Generation Time: Aug 23, 2013 at 11:19 AM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -40,7 +40,23 @@ CREATE TABLE IF NOT EXISTS `authassignment` (
 
 INSERT INTO `authassignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES
 ('Admin', '1', NULL, 'N;'),
-('Admin', '2', NULL, 'N;');
+('Site.*', '2', NULL, 'N;'),
+('Site.Contact', '2', NULL, 'N;'),
+('Site.Error', '2', NULL, 'N;'),
+('Site.Index', '2', NULL, 'N;'),
+('Site.Login', '2', NULL, 'N;'),
+('Site.Logout', '2', NULL, 'N;'),
+('User.Default.*', '2', NULL, 'N;'),
+('User.Default.Index', '2', NULL, 'N;'),
+('User.Login.*', '2', NULL, 'N;'),
+('User.Login.Login', '2', NULL, 'N;'),
+('User.Logout.*', '2', NULL, 'N;'),
+('User.Logout.Logout', '2', NULL, 'N;'),
+('User.Profile.*', '2', NULL, 'N;'),
+('User.Profile.Profile', '2', NULL, 'N;'),
+('User.User.*', '2', NULL, 'N;'),
+('User.User.Index', '2', NULL, 'N;'),
+('User.User.View', '2', NULL, 'N;');
 
 -- --------------------------------------------------------
 
@@ -65,7 +81,25 @@ INSERT INTO `authitem` (`name`, `type`, `description`, `bizrule`, `data`) VALUES
 ('Admin', 2, NULL, NULL, 'N;'),
 ('Authenticated', 2, NULL, NULL, 'N;'),
 ('Guest', 2, NULL, NULL, 'N;'),
-('Operator', 2, 'Operator', NULL, 'N;');
+('Operator', 2, 'Operator', NULL, 'N;'),
+('Site.*', 1, NULL, NULL, 'N;'),
+('Site.Contact', 0, NULL, NULL, 'N;'),
+('Site.Error', 0, NULL, NULL, 'N;'),
+('Site.Index', 0, NULL, NULL, 'N;'),
+('Site.Login', 0, NULL, NULL, 'N;'),
+('Site.Logout', 0, NULL, NULL, 'N;'),
+('User.Default.*', 1, NULL, NULL, 'N;'),
+('User.Default.Index', 0, NULL, NULL, 'N;'),
+('User.Login.*', 1, NULL, NULL, 'N;'),
+('User.Login.Login', 0, NULL, NULL, 'N;'),
+('User.Logout.*', 1, NULL, NULL, 'N;'),
+('User.Logout.Logout', 0, NULL, NULL, 'N;'),
+('User.Profile.*', 1, NULL, NULL, 'N;'),
+('User.Profile.Profile', 0, NULL, NULL, 'N;'),
+('User.ProfileField.View', 0, NULL, NULL, 'N;'),
+('User.User.*', 1, NULL, NULL, 'N;'),
+('User.User.Index', 0, NULL, NULL, 'N;'),
+('User.User.View', 0, NULL, NULL, 'N;');
 
 -- --------------------------------------------------------
 
@@ -179,8 +213,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `email`, `activkey`, `createtime`, `lastvisit`, `superuser`, `status`) VALUES
-(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'webmaster@example.com', '9a24eff8c15a6a141ece27eb6947da0f', 1261146094, 1377247710, 1, 1),
-(2, 'demo', 'fe01ce2a7fbac8fafaed7c982a04e229', 'demo@example.com', '099f825543f7850cc038b90aaff39fac', 1261146096, 1377247749, 0, 1);
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'webmaster@example.com', '9a24eff8c15a6a141ece27eb6947da0f', 1261146094, 1377249490, 1, 1),
+(2, 'demo', 'fe01ce2a7fbac8fafaed7c982a04e229', 'demo@example.com', '099f825543f7850cc038b90aaff39fac', 1261146096, 1377249518, 0, 1);
 
 --
 -- Constraints for dumped tables
