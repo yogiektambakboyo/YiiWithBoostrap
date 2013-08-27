@@ -35,8 +35,7 @@
  */
 
 div.form
-{
-}
+{}
 
 div.form input,
 div.form textarea,
@@ -161,4 +160,10 @@ div.wide.form .buttons, div.wide.form .hint, div.wide.form .errorMessage
 {
 	clear: left;
 	padding-left: 110px;
+}
+
+div.centerposition
+{
+    margin-left: 500;
+    padding: 0;
 }

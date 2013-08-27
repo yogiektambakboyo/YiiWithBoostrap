@@ -27,10 +27,12 @@
 <body>
 
 <div class="container" id="page">
-
 	<div id="header">
 		<div id="logo">
-            <?php $this->widget('bootstrap.widgets.TbNavbar', array(
+            <?php
+            if(!Yii::app()->user->isGuest){
+
+            $this->widget('bootstrap.widgets.TbNavbar', array(
                 'type'=>'inverse', // null or 'inverse'
                 'brand'=>'Project name',
                 'brandUrl'=>'#',
@@ -61,7 +63,8 @@
                     '<form class="navbar-search pull-left" action=""><input type="text" class="search-query span2" placeholder="Search"></form>',
 
                 ),
-            )); ?>
+            ));
+            }?>
 		</div>
 
 	</div><!-- header -->
@@ -87,11 +90,13 @@
 
 </div><!-- page -->
 
-<div id="footer">
-    Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
-    All Rights Reserved.<br/>
-    <?php echo Yii::powered(); ?>
-</div><!-- footer -->
+    <?php if(!Yii::app()->user->isGuest){
+        echo "<div id='footer'>";
+        echo "Copyright &copy;" .date('Y'). "by My Company.<br/> All Rights Reserved.<br/>";
+        echo Yii::powered();
+        echo "</div><!-- footer -->";
+    } ?>
+
 
 </body>
 </html>

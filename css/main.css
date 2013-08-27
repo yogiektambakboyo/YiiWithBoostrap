@@ -12,7 +12,6 @@ body
 	margin-top: 5px;
 	margin-bottom: 0px;
 	background: white;
-	border: 1px solid #C9E0ED;
     min-height: 574px;
 }
 
@@ -20,7 +19,7 @@ body
 {
 	margin: 0;
 	padding: 0;
-	border-top: 3px solid #C9E0ED;
+	/*border-top: 3px solid #C9E0ED; */
 }
 
 #content
@@ -81,6 +80,33 @@ body
 	background-color:#EFF4FA;
 	text-decoration:none;
 }
+
+#loginbox{
+    width: 250px;
+    margin-left: auto ;
+    margin-right: auto ;
+    margin-top: auto;
+    height: 350px;
+    box-shadow: 2px 2px 10px -1px slategrey;
+    -moz-box-shadow: 2px 2px 10px -1px slategrey;
+    -webkit-box-shadow: 2px 2px 10px -1px slategrey;
+    border: 1px solid #c0c0c0;
+}
+
+#loginboxheader{
+    width: 230px;
+    background-color: orangered;
+    padding-top : 10px;
+    padding-left: 20px;
+    height: 70px;
+    color: #ffffff;
+    text-shadow: 1px 1px 1px slategrey;
+}
+
+#logincontent{
+    padding-left: 20px;
+}
+
 
 div.flash-error, div.flash-notice, div.flash-success
 {

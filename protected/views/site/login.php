@@ -6,9 +6,9 @@
 $this->pageTitle=Yii::app()->name . ' - Login';
 
 
-$this->widget('bootstrap.widgets.TbBreadcrumbs', array(
-    'links'=>array('Login'),
-));
+//$this->widget('bootstrap.widgets.TbBreadcrumbs', array(
+//    'links'=>array('Login'),
+//));
 ?>
 
 <h1>Login</h1>
